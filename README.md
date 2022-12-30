@@ -6,15 +6,7 @@ A command-line app that dynamically generates a professional README.md file
 
 ## Installation
 
-No installation is required! Simply click on the link below to access the app through your browser:
-
-<img src="./assets/favicon/apple-touch-icon.png" alt="logo" width="80px" height="80px">
-
-[README Lab](https://larigens.github.io/readme-lab/)
-    
-OR
-
-If you would like to understand more about the code behind the app and edit it, click "<> code" - the green button. After clicking, in the local tab, copy the SSH key. Open the terminal in your Macbook or [git bash](https://git-scm.com/downloads), if you have Windows, and type:
+Click "<> code" - the green button. After clicking, in the local tab, copy the SSH key. Open the terminal in your Macbook or [git bash](https://git-scm.com/downloads), if you have Windows, and type:
 
 ```bash
 git clone [paste ssh key]
@@ -24,6 +16,22 @@ I would recommend downloading [Visual Studio Code](https://code.visualstudio.com
 
 Detailed information about [cloning a repository.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
+You will also need to download [node.js](https://nodejs.org/en/download/). 
+
+And NPM, that you can install running the code below in your terminal:
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+```
+
+Within the directory of this app, install Inquirer by using the command:
+
+```bash
+npm install --save inquirer@^8.0.0
+```
+
+**Make sure to download this version, because the newest ones does not use the commonjs syntax require('inquirer') anymore.**
+
 ## Mock-Up
 
 The following gif shows the web application's appearance and functionality:
@@ -32,7 +40,9 @@ The following gif shows the web application's appearance and functionality:
 
 ## Usage/Examples
 
-README Lab is a tool that enables you to generate your README file.
+Initialize the app by typing the command "node index.js" in your terminal. Once the app is initialized,  series of questions will appear so that the user can insert the necessary information to build the file.
+
+A new README file will be then generated and saved into a different folder.
 
 ## Support
 
@@ -46,12 +56,13 @@ For support, email larigens@gmail.com.
   
 - [JQuery](https://api.jquery.com/)
 
-- [Boostrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
+- [Node.js](https://nodejs.org/en/)
   
-- [Day.js](https://day.js.org/docs/en/display/format)
+- [NPM](https://www.npmjs.com/)
+  
+- [Inquirer](https://www.npmjs.com/package/inquirer)
 
-
-## Feedback
+## **Feedback**
 
 If you have any feedback, please contact me at larigens@gmail.com.
 

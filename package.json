@@ -1,0 +1,26 @@
+{
+  "name": "readme-lab",
+  "version": "1.0.0",
+  "description": "App to generate a professional README.md file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larigens/readme-lab.git"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Larissa Guilherme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/larigens/readme-lab/issues"
+  },
+  "homepage": "https://github.com/larigens/readme-lab#readme",
+  "dependencies": {
+    "inquirer": "^8.2.5"
+  }
+}
