@@ -6,38 +6,83 @@ inquirer.prompt([
     {
         type: "input",
         message: "Enter your app name: ",
-        name: "name"
+        name: "name",
+        validate: value => {
+            if (!value.trim()) {
+                return 'Please give your project a name!';
+            }
+            else {
+                return true;
+            }
+        }
     },
     {
         type: "input",
         message: "Tell me a little bit about your project: ",
-        name: "description"
+        name: "description",
+        validate: value => {
+            if (!value.trim()) {
+                return 'Please enter a description of your project, we need to let people know what it does specifically';
+            }
+            else {
+                return true;
+            }
+        }
     },
     {
         type: "confirm",
         message: "Does your app require instalation?",
-        name: "installation"
+        name: "installation",
     },
-    {
-        type: "input",
-        message: "If your app have a website, please enter the URL: ",
-        name: "website"
-    },
-    
     {
         type: "confirm",
         message: "Does your app have a website?",
-        name: "website"
+        name: "website",
+        when(answers) {
+            return answers.installation === false;
+        }
+    },
+    {
+        type: "input",
+        message: "Please enter your website's URL: ",
+        name: "websiteURL",
+        when(answers) {
+            return answers.website === true;
+        }
+    },
+    {
+        type: "confirm",
+        message: "Would you like to add an image or gif of your app? ",
+        name: "mockup",
     },
     {
         type: "input",
         message: "Tell me a little bit about how your app works: ",
-        name: "usage"
+        name: "usage",
+        validate: value => {
+            if (!value.trim()) {
+                return 'Please enter a description of how your project works, we need to let people know how to use it';
+            }
+            else {
+                return true;
+            }
+        }
     },
     {
         type: "input",
         message: "Enter your email address: ",
-        name: "email"
+        name: "email",
+        validate: function (email) {
+
+            valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
+
+            if (valid) {
+                return true;
+            } else {
+                console.log(".  Please enter a valid email")
+                return false;
+            }
+        }
     },
     {
         type: "input",
@@ -47,25 +92,33 @@ inquirer.prompt([
     {
         type: "input",
         message: "Enter all the authors name: ",
-        name: "authors"
+        name: "authors",
+        validate: value => {
+            if (!value.trim()) {
+                return 'Author is mandatory for license';
+            }
+            else {
+                return true;
+            }
+        }
     },
     {
         type: "input",
         message: "Enter your project's license: ",
-        name: "license"
+        name: "license",
+        validate: value => {
+            if (!value.trim()) {
+                return 'License is mandatory!'
+            }
+            else {
+                return true;
+            }
+        }
     }
 ])
     .then(function (data) {
-        // generateREADME(data);
         const filename = './gen/README.md'
         fs.writeFile(filename, generateREADME(data), (err) =>
             err ? console.log(err) : console.log('Success!')
         );
-
-        //     const filename = "README2.md"
-        //     fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-        //     err ? console.log(err) : console.log('Success!')
-        //   );
     })
-
-    // Create a module and export the variable to another file 
