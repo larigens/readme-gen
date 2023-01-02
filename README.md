@@ -61,6 +61,8 @@ For support, email larigens@gmail.com.
 - [NPM](https://www.npmjs.com/)
   
 - [Inquirer](https://www.npmjs.com/package/inquirer)
+  
+- [PaksTech](https://pakstech.com/blog/inquirer-js/)
 
 ## **Feedback**
 

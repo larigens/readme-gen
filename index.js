@@ -74,10 +74,8 @@ inquirer.prompt(
             type: "input",
             message: "Enter your email address: ",
             name: "email",
-            validate: function (email) {
-
-                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
-
+            validate: (answer) => {
+               const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answer)
                 if (valid) {
                     return true;
                 } else {

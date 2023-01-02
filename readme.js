@@ -80,3 +80,5 @@ Please refer to the [LICENSE](https://choosealicense.com/licenses/${(license)}/)
 }
 
 module.exports = generateREADME;
+
+// TODO: NEED TO FIX THE SEPARATOR - IT SHOULD NOT SHOW UP
