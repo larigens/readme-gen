@@ -5,7 +5,8 @@ function generateREADME(data) {
 
     if (installation) {
         installation =
-`## Installation
+            `\n## Installation
+
 Click "<> code" - the green button. After clicking, in the local tab, copy the SSH key. Open the terminal in your Macbook or [git bash](https://git-scm.com/downloads), if you have Windows, and type:
 
 &#768&#768&#768bash
@@ -14,12 +15,13 @@ git clone [paste ssh key]
         
 I would recommend downloading [Visual Studio Code](https://code.visualstudio.com/download) to edit the code locally. 
         
-Detailed information about [cloning a repository.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)`
+Detailed information about [cloning a repository.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)\n`
     }
     else if (website && !installation) {
-        installation = 
-`## Installation
-No installation is required! Simply click on the link below to access the app through your browser: ` + websiteURL;
+        installation =
+            `\n## Installation
+
+No installation is required! Simply click on the link below to access the app through your browser: ${websiteURL}\n`
     }
     else {
         installation = "";
@@ -27,38 +29,52 @@ No installation is required! Simply click on the link below to access the app th
 
     if (mockup) {
         mockup =
-`## Mock-Up
+            `\n## Mock-Up
 
 The following gif shows the web applications appearance and functionality
 
-![App Screenshot](./images/demo.gif)`
+![App Screenshot](./images/demo.gif)\n`
     }
     else {
         mockup = "";
     }
+
+    var acknowledgementsArr = []
+    for (let i = 0; i < acknowledgements.length; i++) {
+        acknowledgementsArr.push(
+            `- [${acknowledgements[i]}]\n`
+        )
+    }
+
+    var authorsArr = []
+    for (let i = 0; i < authors.length; i++) {
+        authorsArr.push(
+            `- [${authors[i]}]\n`
+        )
+    }
+
     return `
 # ${name}
 
 ## Description
-${description}
 
-${installation}
-
-${mockup}
-   
+${description}\n${installation}${mockup}
 ## Usage
+
 ${usage}
     
 ## Support
-For support, email ${email}
+
+For support, email **${email}**
 
 ## Acknowledgements
-- [${acknowledgements}]
 
+${acknowledgementsArr}
 ## Authors
-${authors}
-    
+
+${authorsArr}
 ## License
+
 Please refer to the [LICENSE](https://choosealicense.com/licenses/${(license)}/) in the repo.
   `;
 }
