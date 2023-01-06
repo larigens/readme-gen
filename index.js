@@ -154,20 +154,25 @@ const questions = [
     // THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
 ];
 
+// Function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), (err) =>
-        err ? console.log(err) : console.log('Success!')
+        err ? console.log(err) : console.log('Your README.md has been successfully generated!')
     );
 }
 
-// TODO: Create a function to initialize app
-function init() { }
-inquirer
-    .prompt(questions)
-    .then(() => {
-        console.log(data);
-        writeToFile(fileName, data);
-    });
+// Initialize app
+function init() {
+    return inquirer
+        .prompt(questions)
+        .then((data) => {
+            console.log(data);
+            writeToFile(fileName, data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
 
 // Function call to initialize app
 init();
