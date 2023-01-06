@@ -1,7 +1,7 @@
 <h1 align="center"> README Lab </h1>
 
 <p align="center">
-    <img src="./assets/favicon/apple-touch-icon.png" alt="logo" width="120px" height="120px" />
+    <img src="./assets/images/logo.png" alt="logo" width="120px" height="120px" />
   <br>
   <i>README Lab is a command-line app that generates a professional README.md
     <br> built using Node.js.</i>
