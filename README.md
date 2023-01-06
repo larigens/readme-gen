@@ -9,9 +9,12 @@
 </p>
 <br>
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
-[![JavaScript](https://img.shields.io/github/languages/top/lernantino/badmath)](JavaScript)
-[![License MIT](https://img.shields.io/badge/License-MIT-blue.svg)](MIT)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-9cf.svg)](code_of_conduct.md)
+![Contributors](https://img.shields.io/github/contributors/larigens/readme-lab?style=plastic&color=9cf)
+![Forks](https://img.shields.io/github/forks/larigens/readme-lab?style=plastic&color=9cf)
+![Stars](https://img.shields.io/github/stars/larigens/readme-lab?style=plastic&color=9cf)
+![Licence](https://img.shields.io/github/license/larigens/readme-lab?style=plastic&color=9cf)
+![Issues](https://img.shields.io/github/issues/larigens/readme-lab?style=plastic&color=9cf)
 
 ---
 ## Description
@@ -88,6 +91,8 @@ A new README file will then be generated and saved in a different folder called 
 
 If you need more guidance on how to use README Lab, click here for the tutorial!
 
+FYI: the README will be generated with some hints that you will need to change according to your project. After you finish, erase the notes.
+
 ## Guide
 
 You can find a template README.md inside the `utils` folder where you will find all the items and reasons why you should add them to your file.
@@ -110,8 +115,6 @@ Our Code of Conduct follows the same principles as the [Contributor Covenant](ht
 - [W3 Schools](https://www.w3schools.com)
 
 - [MDN](https://developer.mozilla.org/en-US/)
-  
-- [JQuery](https://api.jquery.com/)
 
 - [Node.js](https://nodejs.org/en/)
   
@@ -121,13 +124,15 @@ Our Code of Conduct follows the same principles as the [Contributor Covenant](ht
   
 - [Professional README Guide](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
   
+- [Shields](https://shields.io/)
+  
 - [PaksTech](https://pakstech.com/blog/inquirer-js/)
 
 ## Links
 
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://larigens.github.io/lari-gui/)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lari-gui/)
-[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/coffeebr_eak)
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=flat&logo=ko-fi&logoColor=white)](https://larigens.github.io/lari-gui/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lari-gui/)
+[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=flat&logo=twitter&logoColor=white)](https://twitter.com/coffeebr_eak)
 
 ## License
 
