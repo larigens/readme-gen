@@ -14,13 +14,13 @@ git clone [paste ssh key]
 
 I would recommend downloading [Visual Studio Code](https://code.visualstudio.com/download) to edit the code locally. If you need more information on how to clone a repository, [click here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)!
 
-This package requires you to have [Node.js](https://nodejs.org/en/download/), npm and Inquirer installed on your machine. You can install `npm` by running the code below in your terminal:
+This package requires you to have [Node.js](https://nodejs.org/en/download/), npm and Inquirer installed on your machine. You can install `npm` by running the code below on your terminal:
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 ```
 
-Open the project in VS Code and make sure you are in the directory of this application before installing `Inquirer`. To install it, type the command below in your terminal:
+Open the project in VS Code and make sure you are in the directory of this application before installing `Inquirer`. To install it, type the command below on your terminal:
 
 ```bash
 npm install --save inquirer@^8.0.0
@@ -46,7 +46,7 @@ node index.js
 
 Once the application is launched, a series of questions will appear so that the user can enter the necessary information to build the file. 
 
-A new README file will then be generated and saved in a different folder called **gen**. The content will varie depending on the user's inputs, but the items are: Title of the project, Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
+A new README file will then be generated and saved in a different folder called **gen**. The content will vary depending on the user's inputs, but the available items are: **Title of the project, Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions**.
 
 ## Guidelines
 
