@@ -2,35 +2,31 @@
 
 ## Description
 
-A command-line app that dynamically generates a professional README.md file
+README Lab is a command-line app that dynamically generates a professional README.md files. We all know it can be frustrating and confusing to write one from scratch, so I created this package to help developers create a quality readme file quickly and be able to devote more time working on the project.
 
 ## Installation
 
-Click "<> code" - the green button. After clicking, in the local tab, copy the SSH key. Open the terminal in your Macbook or [git bash](https://git-scm.com/downloads), if you have Windows, and type:
+Click `<> code` - the green button. After clicking, in the local tab, copy the SSH key. Open the terminal in your Macbook or [git bash](https://git-scm.com/downloads), if you have Windows, and type:
 
 ```bash
 git clone [paste ssh key]
 ```
 
-I would recommend downloading [Visual Studio Code](https://code.visualstudio.com/download) to edit the code locally. 
+I would recommend downloading [Visual Studio Code](https://code.visualstudio.com/download) to edit the code locally. If you need more information on how to clone a repository, [click here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)!
 
-Detailed information about [cloning a repository.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-
-You will also need to download [node.js](https://nodejs.org/en/download/). 
-
-And NPM, that you can install running the code below in your terminal:
+This package requires you to have [Node.js](https://nodejs.org/en/download/), npm and Inquirer installed on your machine. You can install `npm` by running the code below in your terminal:
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 ```
 
-Within the directory of this app, install Inquirer by using the command:
+Open the project in VS Code and make sure you are in the directory of this application before installing `Inquirer`. To install it, type the command below in your terminal:
 
 ```bash
 npm install --save inquirer@^8.0.0
 ```
 
-**Make sure to download this version, because the newest ones does not use the commonjs syntax require('inquirer') anymore.**
+**Be sure to download this version, because newer versions no longer use the commonjs syntax require('inquirer')**
 
 ## Mock-Up
 
@@ -38,15 +34,29 @@ The following gif shows the web application's appearance and functionality:
 
 ![App Screenshot](./assets/images/demo.gif)
 
+- Link to watch the tutorial: 
+
 ## Usage/Examples
 
-Initialize the app by typing the command "node index.js" in your terminal. Once the app is initialized,  series of questions will appear so that the user can insert the necessary information to build the file.
+Launch the application by entering the command below in your terminal:
 
-A new README file will be then generated and saved into a different folder.
+```bash
+node index.js
+```
 
-## Support
+Once the application is launched, a series of questions will appear so that the user can enter the necessary information to build the file. 
+
+A new README file will then be generated and saved in a different folder called **gen**. The content will varie depending on the user's inputs, but the items are: Title of the project, Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
+
+## Guidelines
+
+Below are some of the items and reasons why you should add them to your file.
+
+## Support / Feedback
 
 For support, email larigens@gmail.com.
+
+## Contributions
 
 ## Acknowledgements
 
@@ -61,6 +71,8 @@ For support, email larigens@gmail.com.
 - [NPM](https://www.npmjs.com/)
   
 - [Inquirer](https://www.npmjs.com/package/inquirer)
+  
+- [Professional README Guide](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
   
 - [PaksTech](https://pakstech.com/blog/inquirer-js/)
 
