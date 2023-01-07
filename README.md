@@ -1,7 +1,7 @@
 <h1 align="center"> README Lab </h1>
 
 <p align="center">
-    <img src="./assets/images/logo.png" alt="logo" width="120px" height="120px" />
+    <img src="./assets/images/logo.png" alt="logo" width="150px" height="150px" />
   <br>
   <i>README Lab is a command-line app that generates a professional README.md
     <br> built using Node.js.</i>
@@ -9,7 +9,7 @@
 </p>
 <br>
 
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-9cf.svg)](code_of_conduct.md)
+![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-9cf.svg)
 ![Contributors](https://img.shields.io/github/contributors/larigens/readme-lab?style=plastic&color=9cf)
 ![Forks](https://img.shields.io/github/forks/larigens/readme-lab?style=plastic&color=9cf)
 ![Stars](https://img.shields.io/github/stars/larigens/readme-lab?style=plastic&color=9cf)
@@ -69,7 +69,7 @@ Open the project in VS Code and make sure you are in the directory of this appli
 npm install --save inquirer@^8.0.0
 ```
 
-**Be sure to download this version, because newer versions no longer use the commonjs syntax require('inquirer')**
+**Note: Be sure to download this version, because newer versions no longer use the commonjs syntax require('inquirer').**
 
 ## Mock-Up
 
@@ -87,11 +87,11 @@ node index.js
 
 Once the application is launched, a series of questions will appear so that the user can enter the necessary information to build the file. 
 
-A new README file will then be generated and saved in a different folder called **gen**. The content will vary depending on the user's inputs, but the available items are: **Title of the project, Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions**.
+A new README file will then be generated and saved in a different folder called `gen`. The content will vary depending on the user's inputs, but the available items are: **Title of the project, Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions**.
 
 If you need more guidance on how to use README Lab, click here for the tutorial!
 
-FYI: the README will be generated with some hints that you will need to change according to your project. After you finish, erase the notes.
+**Note: the README will be generated with some hints that you will need to change according to your project. After you finish, erase the notes.**
 
 ## Guide
 

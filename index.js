@@ -25,8 +25,16 @@ const questions = [
     {
         type: "list",
         message: "Choose a style: ",
-        name: "name",
+        name: "style",
         choices: ['classic', 'creative']
+    },
+    {
+        type: "confirm",
+        message: "Does your app have a logo?",
+        name: "logo",
+        when(answer) {
+            return answer.style === "creative";
+        }
     },
     {
         type: "input",
@@ -44,7 +52,7 @@ const questions = [
     {
         type: "confirm",
         message: "Would you like to add a table of contents? ",
-        name: "table-of-contents"
+        name: "tableOfContents"
     },
     {
         type: "confirm",
@@ -216,8 +224,6 @@ const questions = [
             }
         },
     },
-    // Needs to be a list. a badge for that license is added near the top of the README 
-    // and a notice is added to the section of the README entitled License that explains which license the application is covered under
     {
         type: "list",
         message: "Enter your project's license: ",
@@ -234,6 +240,22 @@ const questions = [
         message: "Choose one color for your badges: ",
         name: "badgesColor",
         choices: ['green', 'blue', 'yellow', 'red', 'pink', 'light blue', 'grey', 'orange', 'violet']
+    },
+    {
+        type: "input",
+        message: "Enter the name of your repository exactly as it is displayed on GitHub: ",
+        name: "repository",
+        when(answer) {
+            return answer.contributionsQues === true || answer.badgesQues === true || answer.license !== "none";
+        },
+        validate: answer => {
+            if (!answer.trim()) {
+                return 'Please provide your repository name!';
+            }
+            else {
+                return true;
+            }
+        }
     },
 ];
 
