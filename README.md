@@ -3,8 +3,8 @@
 <p align="center">
     <img src="./assets/images/logo.png" alt="logo" width="150px" height="150px" />
   <br>
-  <i>README Lab is a command-line app that generates a professional README.md
-    <br> built using Node.js.</i>
+  <i>README Lab generates a professional README.md
+    <br> using Node.js.</i>
   <br>
 </p>
 <br>
@@ -19,7 +19,7 @@
 ---
 ## Description
 
-README Lab is a command-line app that generates a professional README.md file for your GitHub project. Writing one from scratch can be frustrating and confusing, so use this tool to generate the perfect document!
+README Lab is a back-end application that generates a professional README.md file for your GitHub project. Writing one from scratch can be frustrating and confusing, so use this tool to generate the perfect document!
 
 I've noticed how much time we developers spend creating a quality README.md file, or when we don't have the time to do this well, then it's often overlooked or treated as an afterthought. That's why I created this package, which will save us time and allow us to spend more time on the project itself. It will also ensure that every app has a professional README.md — something we all need!
 

@@ -8,7 +8,6 @@ const fileName = './gen/README.md';
 
 // Array of questions for user input
 const questions = [
-    // I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
     {
         type: "input",
         message: "Enter your project title: ",
