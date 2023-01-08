@@ -29,7 +29,7 @@ const questions = [
         message: "Does your app have a logo?",
         name: "logo",
         when(answers) {
-            return answers.style === "creative";
+            return answers.style === "Creative";
         }
     },
     {
