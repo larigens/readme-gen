@@ -1,40 +1,40 @@
 function generateMarkdown(answers) {
     var { name, style, logo, description, tableOfContents, installationQues, installation, website, websiteURL, mockup, usage, email, github, contributionsQues, contributions, testsQues, tests, acknowledgements, authorsQues, authors, license, badgesQues, badgesColor, repository } = answers
-    // Generate markdown for the top required portions of the README
+    // Initial README and will add items according to user input
     let readmeDraft = "";
 
     // Name, style, logo and website
-    if (style === "creative" && logo === true && website === true) {
+    if (style === "Creative" && logo === true && website === true) {
         readmeDraft = `
 <h1 align="center"> ${name} </h1>
 <p align="center"><img src="./assets/images/logo.png" alt="logo" width="120px" height="120px" /><br></p>
 <p align="center"><a href="${websiteURL}"><strong> Access our app! </strong></a><br></p><br>\n`
     }
-    else if (style === "creative" && logo === true && website === false) {
+    else if (style === "Creative" && logo === true && website === false) {
         readmeDraft = `
 <h1 align="center"> ${name} </h1>
 <p align="center"><img src="./assets/images/logo.png" alt="logo" width="120px" height="120px" /><br></p><br>\n`
     }
-    else if (style === "creative" && logo === false && website === true) {
+    else if (style === "Creative" && logo === false && website === true) {
         readmeDraft = `
 <h1 align="center"> ${name} </h1>
 <p align="center"><a href="${websiteURL}"><strong> Access our app! </strong></a><br></p><br>\n`
     }
-    else if (style === "creative" && logo === false && website === false) {
+    else if (style === "Creative" && logo === false && website === false) {
         readmeDraft = `
 <h1 align="center"> ${name} </h1> <br>\n`
     }
-    else if (style === "classic" && website === true) {
+    else if (style === "Classic" && website === true) {
         readmeDraft = `
 # ${name}\n
 <p align="center"><a href="${websiteURL}"><strong> Access our app! </strong></a><br></p><br>\n`
     }
-    else if (style === "classic" && website === false) {
+    else if (style === "Classic" && website === false) {
         readmeDraft = `
 # ${name}\n`
     }
 
-    // Badges Colors
+    // Badges Colors - it has to correspond with what is on the shields' website.
     if (badgesColor === "green") {
         badgesColor = "success"
     }
@@ -51,7 +51,7 @@ function generateMarkdown(answers) {
         badgesColor = "blueviolet"
     }
 
-    // License Badge
+    // License Badge - it has to correspond with what is on the choosealicense's url.
     if (license === "Apache License 2.0") {
         license = "apache-2.0"
     }
@@ -97,14 +97,16 @@ function generateMarkdown(answers) {
 ![Issues](https://img.shields.io/github/issues/${github}/${repository}?style=plastic&color=${badgesColor})`
     }
 
-    // Description
-    if (description !== null && license !== "none" || contributionsQues === true || badgesQues === true) {
+    // Description - two different entries because if there are no badges, the description does not need a break line at the beginning.
+    if (description !== null && license !== "none" || contributionsQues === true || badgesQues === true) { // With badges
         readmeDraft += `
+---        
 \n## Description\n
 ${description}\n`
     }
-    else {
+    else { // Without badges
         readmeDraft += `
+--- 
 ## Description\n
 ${description}\n`
     }
@@ -172,8 +174,8 @@ ${usage}\n`
         readmeDraft += `
 ## Questions\n
 For questions and support feel free to contact me via:\n
-<a href="mailto:${email}">📧 Email </a>!\n
-<a href="https://github.com/${github}">🐈‍⬛ GitHub </a>!\n `
+<a href="mailto:${email}">📧 Email </a>\n
+<a href="https://github.com/${github}">🐈‍⬛ GitHub </a>\n`
     }
 
     // Contributions
@@ -192,28 +194,18 @@ ${tests}\n`
 
     // Acknowledgements
     if (acknowledgements !== null) {
-        var acknowledgementsArr = []
-        for (let i = 0; i < acknowledgements.length; i++) {
-            acknowledgementsArr.push(
-                `- [${acknowledgements[i]}](ADD THE WEBSITE URL INSIDE THIS PARENTHESIS AND DELETE THE COMMA)\n`
-            )
-        }
+        const acknowledgementsArr = acknowledgements.map(item => `- [${item}](ADD THE WEBSITE URL INSIDE THIS PARENTHESIS AND DELETE THE COMMA)\n`)
         readmeDraft += `
 ## Acknowledgements\n
-${acknowledgementsArr}\n`
+${acknowledgementsArr}`
     }
 
     // Authors
     if (authorsQues) {
-        var authorsArr = []
-        for (let i = 0; i < authors.length; i++) {
-            authorsArr.push(
-                `- [${authors[i]}](ADD HER/HIS GITHUB URL INSIDE THIS PARENTHESIS AND DELETE THE COMMA)\n`
-            )
-        }
+        const authorsArr = authors.map(item => `- [${item}](ADD HER/HIS GITHUB URL INSIDE THIS PARENTHESIS AND DELETE THE COMMA)\n`)
         readmeDraft += `
 ## Authors\n
-${authorsArr}\n`
+${authorsArr}`
     }
 
     // License

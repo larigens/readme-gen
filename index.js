@@ -22,7 +22,7 @@ const questions = [
         type: "list",
         message: "Choose a style: ",
         name: "style",
-        choices: ['classic', 'creative']
+        choices: ['Classic', 'Creative']
     },
     {
         type: "confirm",
@@ -265,7 +265,6 @@ const init = () => {
 // Function call to initialize app
 init()
     .then(answers => {
-        console.log("Entries have been successfully collected!");
         generateMarkdown(answers);
         writeToFile(answers);
     })
@@ -274,7 +273,7 @@ init()
     })
 
 // Function to write README file
-function writeToFile(answers) {
+const writeToFile = (answers) => {
     const fileName = './gen/README.md';
     console.log("Generating your file...");
     fs.writeFile(fileName, generateMarkdown(answers), (err) =>
