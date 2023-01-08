@@ -39,8 +39,9 @@ During this process, I learned how crucial the file is to the application and wh
 - [Contributions](#contributions)
   - [Contributing Guidelines](#contributing-guidelines)
   - [Code of Conduct](#code-of-conduct)
-- [Acknowledgements](#acknowledgements)
-- [Links](#links)
+- [Credits](#credits)
+  - [Acknowledgements](#acknowledgements)
+  - [Links](#links)
 - [License](#license)
 
 ## Installation
@@ -110,7 +111,8 @@ Want to report a bug, contribute some code, request a new feature, or improve th
 
 Our Code of Conduct follows the same principles as the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/), version 2.1.
 
-## Acknowledgements
+## Credits
+### Acknowledgements
 
 - [W3 Schools](https://www.w3schools.com)
 
@@ -127,12 +129,14 @@ Our Code of Conduct follows the same principles as the [Contributor Covenant](ht
 - [Shields](https://shields.io/)
   
 - [PaksTech](https://pakstech.com/blog/inquirer-js/)
+  
+- [FreeCodeCamp](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/)
 
-## Links
+### Links
 
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=flat&logo=ko-fi&logoColor=white)](https://larigens.github.io/lari-gui/)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lari-gui/)
-[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=flat&logo=twitter&logoColor=white)](https://twitter.com/coffeebr_eak)
+[![Portfolio](https://img.shields.io/badge/my_portfolio-000?style=flat&logo=ko-fi&logoColor=white)](https://larigens.github.io/lari-gui/)
+[![Linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lari-gui/)
+[![Twitter](https://img.shields.io/badge/twitter-1DA1F2?style=flat&logo=twitter&logoColor=white)](https://twitter.com/coffeebr_eak)
 
 ## License
 

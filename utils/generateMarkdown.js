@@ -100,6 +100,7 @@ function generateMarkdown(answers) {
     // Description - two different entries because if there are no badges, the description does not need a break line at the beginning.
     if (description !== null && license !== "none" || contributionsQues === true || badgesQues === true) { // With badges
         readmeDraft += `
+\n
 ---        
 \n## Description\n
 ${description}\n`
@@ -135,7 +136,8 @@ ${description}\n`
             readmeDraft += `
 - [Tests](#tests)\n`
         }
-`- [Acknowledgements](#acknowledgements)\n`
+`-[Credits]($credits)\n
+- [Acknowledgements](#acknowledgements)\n`
         if (authorsQues) {
             readmeDraft += `
 - [Authors](#authors)\n`
@@ -196,7 +198,8 @@ ${tests}\n`
     if (acknowledgements !== null) {
         const acknowledgementsArr = acknowledgements.map(item => `- [${item}](ADD THE WEBSITE URL INSIDE THIS PARENTHESIS AND DELETE THE COMMA)\n`)
         readmeDraft += `
-## Acknowledgements\n
+## Credits\n
+### Acknowledgements\n
 ${acknowledgementsArr}`
     }
 
@@ -204,7 +207,7 @@ ${acknowledgementsArr}`
     if (authorsQues) {
         const authorsArr = authors.map(item => `- [${item}](ADD HER/HIS GITHUB URL INSIDE THIS PARENTHESIS AND DELETE THE COMMA)\n`)
         readmeDraft += `
-## Authors\n
+### Authors\n
 ${authorsArr}`
     }
 
