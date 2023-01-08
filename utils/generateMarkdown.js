@@ -99,8 +99,7 @@ function generateMarkdown(answers) {
 
     // Description - two different entries because if there are no badges, the description does not need a break line at the beginning.
     if (description !== null && license !== "None" || contributionsQues === true || badgesQues === true) { // With badges
-        readmeDraft += `
-\n
+        readmeDraft += `\n  
 ---        
 \n## Description\n
 ${description}\n`
