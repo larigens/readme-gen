@@ -61,6 +61,31 @@ function generateMarkdown(answers) {
     }
 
     // License Badge
+    if (license === "Apache License 2.0") {
+        license = "apache-2.0"
+    }
+    else if (license === "MIT License") {
+        license = "mit"
+    }
+    else if (license === "GNU GPLv3") {
+        license = "gpl-3.0"
+    }
+    else if (license === "GNU LGPLv3") {
+        license = "lgpl-3.0"
+    }
+    else if (license === "GNU AGPLv3") {
+        license = "agpl-3.0"
+    }
+    else if (license === "ISC License") {
+        license = "isc"
+    }
+    else if (license === "Mozilla Public License 2.0") {
+        license = "mpl-2.0"
+    }
+    else if (license === "Boost Software License 1.0") {
+        license = "bsl-1.0"
+    }
+    
     if (license !== "none") {
         readmeDraft += `
 ![Licence](https://img.shields.io/static/v1?label=License&message=${license}&color=${badgesColor})`
@@ -74,11 +99,11 @@ function generateMarkdown(answers) {
 
     // Other Badges
     if (badgesQues) {
-        readmeDraft +=
-        `![Contributors](https://img.shields.io/github/contributors/${github}/${repository}?style=plastic&color=${badgesColor})
-         ![Forks](https://img.shields.io/github/forks/${github}/${repository}?style=plastic&color=${badgesColor})
-         ![Stars](https://img.shields.io/github/stars/${github}/${repository}?style=plastic&color=${badgesColor})
-         ![Issues](https://img.shields.io/github/issues/${github}/${repository}?style=plastic&color=${badgesColor})`
+        readmeDraft += `
+![Contributors](https://img.shields.io/github/contributors/${github}/${repository}?style=plastic&color=${badgesColor})
+![Forks](https://img.shields.io/github/forks/${github}/${repository}?style=plastic&color=${badgesColor})
+![Stars](https://img.shields.io/github/stars/${github}/${repository}?style=plastic&color=${badgesColor})
+![Issues](https://img.shields.io/github/issues/${github}/${repository}?style=plastic&color=${badgesColor})`
     }
 
     // Description
@@ -140,6 +165,7 @@ ${installation}\n`
         readmeDraft += `
 ## Mock-Up\n
 The following gif shows the web applications appearance and functionality\n
+To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it - DELETE THIS LINE!\n
 ![App Screenshot](./images/demo.gif)\n`
     }
 
@@ -154,9 +180,9 @@ ${usage}\n`
     if (email && github) {
         readmeDraft += `
 ## Questions\n
-For questions and support feel free to contact me via:
-<a href="mailto:${email}"> Email </a>!
-<a href="https://github.com/${github}"> GitHub </a>!\n `
+For questions and support feel free to contact me via:\n
+<a href="mailto:${email}">📧 Email </a>!\n
+<a href="https://github.com/${github}">🐈‍⬛ GitHub </a>!\n `
     }
 
     // Contributions
@@ -178,7 +204,7 @@ ${tests}\n`
         var acknowledgementsArr = []
         for (let i = 0; i < acknowledgements.length; i++) {
             acknowledgementsArr.push(
-                `- [${acknowledgements[i]}]\n`
+                `- [${acknowledgements[i]}](ADD THE WEBSITE URL INSIDE THIS PARENTHESIS AND DELETE THE COMMA)\n`
             )
         }
         readmeDraft += `
@@ -191,7 +217,7 @@ ${acknowledgementsArr}\n`
         var authorsArr = []
         for (let i = 0; i < authors.length; i++) {
             authorsArr.push(
-                `- [${authors[i]}]\n`
+                `- [${authors[i]}](ADD HER/HIS GITHUB URL INSIDE THIS PARENTHESIS AND DELETE THE COMMA)\n`
             )
         }
         readmeDraft += `
@@ -200,31 +226,6 @@ ${authorsArr}\n`
     }
 
     // License
-    if (license === "Apache License 2.0") {
-        license = "apache-2.0"
-    }
-    else if (license === "MIT License") {
-        license = "mit"
-    }
-    else if (license === "GNU GPLv3") {
-        license = "gpl-3.0"
-    }
-    else if (license === "GNU LGPLv3") {
-        license = "lgpl-3.0"
-    }
-    else if (license === "GNU AGPLv3") {
-        license = "agpl-3.0"
-    }
-    else if (license === "ISC License") {
-        license = "isc"
-    }
-    else if (license === "Mozilla Public License 2.0") {
-        license = "mpl-2.0"
-    }
-    else if (license === "Boost Software License 1.0") {
-        license = "bsl-1.0"
-    }
-
     if (license !== "none") {
         readmeDraft += `
 ## License\n
