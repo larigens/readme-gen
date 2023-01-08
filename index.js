@@ -3,17 +3,14 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// Constant Declaration
-const fileName = './gen/README.md';
-
 // Array of questions for user input
 const questions = [
     {
         type: "input",
         message: "Enter your project title: ",
         name: "name",
-        validate: answer => {
-            if (!answer.trim()) {
+        validate: answers => {
+            if (!answers.trim()) {
                 return 'Please give a name to your project!';
             }
             else {
@@ -31,16 +28,16 @@ const questions = [
         type: "confirm",
         message: "Does your app have a logo?",
         name: "logo",
-        when(answer) {
-            return answer.style === "creative";
+        when(answers) {
+            return answers.style === "creative";
         }
     },
     {
         type: "input",
         message: "Provide a short description explaining the what, why, and how of your project: ",
         name: "description",
-        validate: answer => {
-            if (!answer.trim()) {
+        validate: answers => {
+            if (!answers.trim()) {
                 return 'Provide a short description explaining the what, why, and how of your project.';
             }
             else {
@@ -62,11 +59,11 @@ const questions = [
         type: "input",
         message: "What are the steps required to install your project? ",
         name: "installation",
-        when(answer) {
-            return answer.installationQues === true;
+        when(answers) {
+            return answers.installationQues === true;
         },
-        validate: answer => {
-            if (!answer.trim()) {
+        validate: answers => {
+            if (!answers.trim()) {
                 return 'Provide a step-by-step description of how to get the development environment running.';
             }
             else {
@@ -83,11 +80,11 @@ const questions = [
         type: "input",
         message: "Please enter your website's URL: ",
         name: "websiteURL",
-        when(answer) {
-            return answer.website === true;
+        when(answers) {
+            return answers.website === true;
         },
-        validate: answer => {
-            if (!answer.trim()) {
+        validate: answers => {
+            if (!answers.trim()) {
                 return "Provide your website's URL";
             }
             else {
@@ -104,8 +101,8 @@ const questions = [
         type: "input",
         message: "Provide instructions and examples for use: ",
         name: "usage",
-        validate: answer => {
-            if (!answer.trim()) {
+        validate: answers => {
+            if (!answers.trim()) {
                 return 'An application is useless if no one knows how to use it!';
             }
             else {
@@ -117,8 +114,8 @@ const questions = [
         type: "input",
         message: "Enter an email address in case the user has questions about your project: ",
         name: "email",
-        validate: (answer) => {
-            const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answer)
+        validate: (answers) => {
+            const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answers)
             if (valid) {
                 return true;
             } else {
@@ -127,13 +124,12 @@ const questions = [
             }
         }
     },
-    // THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
     {
         type: "input",
         message: "Enter your github username (without the @): ",
         name: "github",
-        validate: answer => {
-            if (!answer.trim()) {
+        validate: answers => {
+            if (!answers.trim()) {
                 return 'Please enter your github username!';
             }
             else {
@@ -150,11 +146,11 @@ const questions = [
         type: "input",
         message: "Please enter guidelines for how to contribute to your app: ",
         name: "contributions",
-        when(answer) {
-            return answer.contributionsQues === true;
+        when(answers) {
+            return answers.contributionsQues === true;
         },
-        validate: answer => {
-            if (!answer.trim()) {
+        validate: answers => {
+            if (!answers.trim()) {
                 return 'Please enter your contribution guidelines!';
             }
             else {
@@ -171,11 +167,11 @@ const questions = [
         type: "input",
         message: "Please provide examples on how to run the tests: ",
         name: "tests",
-        when(answer) {
-            return answer.testsQues === true;
+        when(answers) {
+            return answers.testsQues === true;
         },
-        validate: answer => {
-            if (!answer.trim()) {
+        validate: answers => {
+            if (!answers.trim()) {
                 return 'Please provide test instructions!';
             }
             else {
@@ -187,11 +183,11 @@ const questions = [
         type: "input",
         message: "Enter all the libraries, frameworks and other code/app you've used in your project: ",
         name: "acknowledgements",
-        filter(answer) {
-            return answer.split(/[ ,]+/).filter(Boolean);
+        filter(answers) {
+            return answers.split(/[ ,]+/).filter(Boolean);
         },
-        validate(answer) {
-            if (answer.length < 1) {
+        validate(answers) {
+            if (answers.length < 1) {
                 return "Mention at least one library/framework/code/app! They deserve the credit!";
             }
             else {
@@ -208,14 +204,14 @@ const questions = [
         type: "input",
         message: "Enter all the authors name: ",
         name: "authors",
-        when(answer) {
-            return answer.authorsQues === true;
+        when(answers) {
+            return answers.authorsQues === true;
         },
-        filter(answer) {
-            return answer.split(/[ ,]+/).filter(Boolean);
+        filter(answers) {
+            return answers.split(/[ ,]+/).filter(Boolean);
         },
-        validate(answer) {
-            if (answer.length < 1) {
+        validate(answers) {
+            if (answers.length < 1) {
                 return 'They deserve the credit too!';
             }
             else {
@@ -238,17 +234,20 @@ const questions = [
         type: "list",
         message: "Choose one color for your badges: ",
         name: "badgesColor",
-        choices: ['green', 'blue', 'yellow', 'red', 'pink', 'light blue', 'grey', 'orange', 'violet']
+        choices: ['green', 'blue', 'yellow', 'red', 'pink', 'light blue', 'grey', 'orange', 'violet'],
+        when(answers) {
+            return answers.badgesQues === true;
+        }
     },
     {
         type: "input",
         message: "Enter the name of your repository exactly as it is displayed on GitHub: ",
         name: "repository",
-        when(answer) {
-            return answer.contributionsQues === true || answer.badgesQues === true || answer.license !== "none";
+        when(answers) {
+            return answers.contributionsQues === true || answers.badgesQues === true || answers.license !== "none";
         },
-        validate: answer => {
-            if (!answer.trim()) {
+        validate: answers => {
+            if (!answers.trim()) {
                 return 'Please provide your repository name!';
             }
             else {
@@ -258,25 +257,27 @@ const questions = [
     },
 ];
 
-// Function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile(fileName, generateMarkdown(data), (err) =>
-        err ? console.log(err) : console.log('Your README.md has been successfully generated!')
-    );
-}
-
 // Initialize app
-function init() {
-    return inquirer
-        .prompt(questions)
-        .then((data) => {
-            console.log(data);
-            writeToFile(fileName, data);
-        })
-        .catch(err => {
-            console.log(err);
-        })
+const init = () => {
+    return inquirer.prompt(questions);
 }
 
 // Function call to initialize app
-init();
+init()
+    .then(answers => {
+        console.log(answers);
+        generateMarkdown(answers);
+        writeToFile(answers);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+
+// Function to write README file
+function writeToFile(answers) {
+    const fileName = './gen/README.md';
+    console.log("Generating your file");
+    fs.writeFile(fileName, generateMarkdown(answers), (err) =>
+        err ? console.log(err) : console.log('Your README.md has been successfully generated!')
+    );
+}

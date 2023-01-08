@@ -7,51 +7,40 @@
 // TODO: Create a function that returns the license section of README
 // function renderLicenseSection(license) { }
 
-function generateMarkdown(data) {
-    var { name, style, logo, description, tableOfContents, installationQues, installation, website, websiteURL, mockup, usage, email, github, contributionsQues, contributions, testsQues, tests, acknowledgements, authorsQues, authors, license, badgesQues, badgesColor, repository } = data
+function generateMarkdown(answers) {
+    var { name, style, logo, description, tableOfContents, installationQues, installation, website, websiteURL, mockup, usage, email, github, contributionsQues, contributions, testsQues, tests, acknowledgements, authorsQues, authors, license, badgesQues, badgesColor, repository } = answers
+    // Generate markdown for the top required portions of the README
+    let readmeDraft = "";
 
     // Name, style, logo and website
     if (style === "creative" && logo === true && website === true) {
-        `<h1 align="center"> ${name} </h1>
-         <p align="center">
-            <img src="./assets/images/logo.png" alt="logo" width="120px" height="120px" />
-            <br>
-         </p>
-         <p align="center">
-             <a href="${websiteURL}"><strong> Access our app! </strong></a>
-         <br>
-         </p>
-         <br>`
+        readmeDraft = `
+<h1 align="center"> ${name} </h1>
+<p align="center"><img src="./assets/images/logo.png" alt="logo" width="120px" height="120px" /><br></p>
+<p align="center"><a href="${websiteURL}"><strong> Access our app! </strong></a><br></p><br>\n`
     }
     else if (style === "creative" && logo === true && website === false) {
-        `<h1 align="center"> ${name} </h1>
-         <p align="center">
-            <img src="./assets/images/logo.png" alt="logo" width="120px" height="120px" />
-            <br>
-         </p>
-         <br>`
+        readmeDraft = `
+<h1 align="center"> ${name} </h1>
+<p align="center"><img src="./assets/images/logo.png" alt="logo" width="120px" height="120px" /><br></p><br>\n`
     }
     else if (style === "creative" && logo === false && website === true) {
-        `<h1 align="center"> ${name} </h1>
-         <p align="center">
-             <a href="${websiteURL}"><strong> Access our app! </strong></a>
-         <br>
-         </p>
-         <br>`
+        readmeDraft = `
+<h1 align="center"> ${name} </h1>
+<p align="center"><a href="${websiteURL}"><strong> Access our app! </strong></a><br></p><br>\n`
     }
     else if (style === "creative" && logo === false && website === false) {
-        `<h1 align="center"> ${name} </h1> <br>`
+        readmeDraft = `
+<h1 align="center"> ${name} </h1> <br>\n`
     }
     else if (style === "classic" && website === true) {
-        `# ${name}\n
-        <p align="center">
-            <a href="${websiteURL}"><strong> Access our app! </strong></a>
-        <br>
-        </p>
-        <br>`
+        readmeDraft = `
+# ${name}\n
+<p align="center"><a href="${websiteURL}"><strong> Access our app! </strong></a><br></p><br>\n`
     }
     else if (style === "classic" && website === false) {
-        `# ${name}\n`
+        readmeDraft = `
+# ${name}\n`
     }
 
     // Badges Colors
@@ -73,109 +62,141 @@ function generateMarkdown(data) {
 
     // License Badge
     if (license !== "none") {
-        `![Licence](https://img.shields.io/static/v1?label=License&message=${license}&color=${badgesColor})`
+        readmeDraft += `
+![Licence](https://img.shields.io/static/v1?label=License&message=${license}&color=${badgesColor})`
     }
 
     // Contributor Covenant Badge
     if (contributionsQues) {
-        `![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-${badgesColor}.svg)`
+        readmeDraft += `
+![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-${badgesColor}.svg)`
     }
 
     // Other Badges
     if (badgesQues) {
+        readmeDraft +=
         `![Contributors](https://img.shields.io/github/contributors/${github}/${repository}?style=plastic&color=${badgesColor})
          ![Forks](https://img.shields.io/github/forks/${github}/${repository}?style=plastic&color=${badgesColor})
          ![Stars](https://img.shields.io/github/stars/${github}/${repository}?style=plastic&color=${badgesColor})
-         ![Issues](https://img.shields.io/github/issues/${github}/${repository}?style=plastic&color=${badgesColor})\n`
+         ![Issues](https://img.shields.io/github/issues/${github}/${repository}?style=plastic&color=${badgesColor})`
     }
 
     // Description
-    if (description !== null) {
-        `## Description\n${description}\n`
+    if (description !== null && license !== "none" || contributionsQues === true || badgesQues === true) {
+        readmeDraft += `
+\n## Description\n
+${description}\n`
     }
+    else {
+        readmeDraft += `
+## Description\n
+${description}\n`
+    }
+
     // Table of Contents
     if (tableOfContents) {
-        `## Table of Contents\n
-            -[Description](#description)
-            - [Table of Contents](#table-of-contents)`
+        readmeDraft += `
+## Table of Contents\n
+- [Description](#description)\n
+- [Table of Contents](#table-of-contents)\n`
         if (installationQues) {
-            `- [Installation](#installation)`
+            readmeDraft += `
+- [Installation](#installation)\n`
         }
         if (mockup) {
-            `- [Mock-Up](#mock-up)`
+            readmeDraft += `
+- [Mock-Up](#mock-up)\n`
         }
-            `- [Usage](#usage)
-             - [Questions](#questions)`
+`- [Usage](#usage)\n
+- [Questions](#questions)\n`
         if (contributionsQues) {
-            `- [Contributions](#contributions)`
+            readmeDraft += `
+- [Contributions](#contributions)\n`
         }
         if (testsQues) {
-            `- [Tests](#tests)`
+            readmeDraft += `
+- [Tests](#tests)\n`
         }
-            `- [Acknowledgements](#acknowledgements)`
+`- [Acknowledgements](#acknowledgements)\n`
         if (authorsQues) {
-            `- [Authors](#authors)`
+            readmeDraft += `
+- [Authors](#authors)\n`
         }
         if (license !== "none") {
-            `- [License](#license)\n`
+            readmeDraft += `
+- [License](#license)\n`
         }
     }
 
     // Instalation
     if (installationQues) {
-        `## Installation\n${installation}\n`
+        readmeDraft += `
+## Installation\n
+${installation}\n`
     }
 
     // Mock-Up
     if (mockup) {
-        `## Mock-Up\n
-         The following gif shows the web applications appearance and functionality\n
-         ![App Screenshot](./images/demo.gif)\n`
+        readmeDraft += `
+## Mock-Up\n
+The following gif shows the web applications appearance and functionality\n
+![App Screenshot](./images/demo.gif)\n`
     }
 
     // Usage
     if (usage !== null) {
-        `## Usage\n${usage}\n`
+        readmeDraft += `
+## Usage\n
+${usage}\n`
     }
 
     // Questions
     if (email && github) {
-        `## Questions\n
-        For questions and support feel free to contact me via:
-        <a href="mailto:${email}">Email</a>!
-        GitHub: ${github}\n`
+        readmeDraft += `
+## Questions\n
+For questions and support feel free to contact me via:
+<a href="mailto:${email}"> Email </a>!
+<a href="https://github.com/${github}"> GitHub </a>!\n `
     }
 
     // Contributions
     if (contributionsQues) {
-        `## Contributions\n${contributions}\n`
+        readmeDraft += `
+## Contributions\n
+${contributions}\n`
     }
 
     // Tests
     if (testsQues) {
-        `## Tests\n${tests}\n`
+        readmeDraft += `
+## Tests\n
+${tests}\n`
     }
 
     // Acknowledgements
     if (acknowledgements !== null) {
-        `## Acknowledgements\n`
         var acknowledgementsArr = []
         for (let i = 0; i < acknowledgements.length; i++) {
             acknowledgementsArr.push(
                 `- [${acknowledgements[i]}]\n`
             )
         }
+        readmeDraft += `
+## Acknowledgements\n
+${acknowledgementsArr}\n`
     }
 
     // Authors
     if (authorsQues) {
-        `## Authors\n`
         var authorsArr = []
         for (let i = 0; i < authors.length; i++) {
             authorsArr.push(
                 `- [${authors[i]}]\n`
             )
         }
+        readmeDraft += `
+## Authors\n
+${authorsArr}\n`
     }
 
     // License
@@ -205,9 +226,12 @@ function generateMarkdown(data) {
     }
 
     if (license !== "none") {
-        `## License\n
-         Please refer to the[LICENSE](https://choosealicense.com/licenses/${(license)}/) in the repository.`
+        readmeDraft += `
+## License\n
+Please refer to the[LICENSE](https://choosealicense.com/licenses/${(license)}/) in the repository.`
     }
+
+    return readmeDraft;
 }
 
 module.exports = generateMarkdown;
