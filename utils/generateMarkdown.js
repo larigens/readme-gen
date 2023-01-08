@@ -77,7 +77,7 @@ function generateMarkdown(answers) {
         license = "bsl-1.0"
     }
 
-    if (license !== "none") {
+    if (license !== "None") {
         readmeDraft += `
 ![Licence](https://img.shields.io/static/v1?label=License&message=${license}&color=${badgesColor})`
     }
@@ -98,7 +98,7 @@ function generateMarkdown(answers) {
     }
 
     // Description - two different entries because if there are no badges, the description does not need a break line at the beginning.
-    if (description !== null && license !== "none" || contributionsQues === true || badgesQues === true) { // With badges
+    if (description !== null && license !== "None" || contributionsQues === true || badgesQues === true) { // With badges
         readmeDraft += `
 \n
 ---        
@@ -142,7 +142,7 @@ ${description}\n`
             readmeDraft += `
 - [Authors](#authors)\n`
         }
-        if (license !== "none") {
+        if (license !== "None") {
             readmeDraft += `
 - [License](#license)\n`
         }
@@ -212,7 +212,7 @@ ${authorsArr}`
     }
 
     // License
-    if (license !== "none") {
+    if (license !== "None") {
         readmeDraft += `
 ## License\n
 Please refer to the [LICENSE](https://choosealicense.com/licenses/${(license)}/) in the repository.`
