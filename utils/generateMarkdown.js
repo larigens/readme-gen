@@ -1,12 +1,3 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// function renderLicenseBadge(license) { }
-
-// TODO: Create a function that returns the license link
-// function renderLicenseLink(license) { }
-
-// TODO: Create a function that returns the license section of README
-// function renderLicenseSection(license) { }
-
 function generateMarkdown(answers) {
     var { name, style, logo, description, tableOfContents, installationQues, installation, website, websiteURL, mockup, usage, email, github, contributionsQues, contributions, testsQues, tests, acknowledgements, authorsQues, authors, license, badgesQues, badgesColor, repository } = answers
     // Generate markdown for the top required portions of the README
@@ -85,7 +76,7 @@ function generateMarkdown(answers) {
     else if (license === "Boost Software License 1.0") {
         license = "bsl-1.0"
     }
-    
+
     if (license !== "none") {
         readmeDraft += `
 ![Licence](https://img.shields.io/static/v1?label=License&message=${license}&color=${badgesColor})`
@@ -165,8 +156,8 @@ ${installation}\n`
         readmeDraft += `
 ## Mock-Up\n
 The following gif shows the web applications appearance and functionality\n
-To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it - DELETE THIS LINE!\n
-![App Screenshot](./images/demo.gif)\n`
+**To add a screenshot, create an assets/images folder in your repository and upload your screenshot to it - DELETE THIS LINE!**\n
+![App Screenshot](./assets/images/demo.gif)\n`
     }
 
     // Usage
@@ -229,7 +220,7 @@ ${authorsArr}\n`
     if (license !== "none") {
         readmeDraft += `
 ## License\n
-Please refer to the[LICENSE](https://choosealicense.com/licenses/${(license)}/) in the repository.`
+Please refer to the [LICENSE](https://choosealicense.com/licenses/${(license)}/) in the repository.`
     }
 
     return readmeDraft;
