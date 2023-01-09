@@ -88,7 +88,7 @@ node index.js
 
 Once the application is launched, a series of questions will appear so that the user can enter the necessary information to build the file. 
 
-A new README file will then be generated and saved in a different folder called `gen`. The content will vary depending on the user's inputs, but the available items are: **Title of the project, Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions**.
+A new README file will then be generated and saved in a different folder called `dist`. The content will vary depending on the user's inputs, but the available items are: **Title of the project, Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions**.
 
 If you need more guidance on how to use README Lab, click here for the tutorial!
 
@@ -96,7 +96,7 @@ If you need more guidance on how to use README Lab, click here for the tutorial!
 
 ## Guide
 
-You can find a template README.md inside the `utils` folder where you will find all the items and reasons why you should add them to your file.
+You can find a template README.md inside the `src` folder where you will find all the items and reasons why you should add them to your file.
 
 ## Questions
 

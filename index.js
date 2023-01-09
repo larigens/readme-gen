@@ -274,7 +274,7 @@ init()
 
 // Function to write README file
 const writeToFile = (answers) => {
-    const fileName = './gen/README.md';
+    const fileName = './dist/README.md';
     console.log("Generating your file...");
     fs.writeFile(fileName, generateMarkdown(answers), (err) =>
         err ? console.log(err) : console.log('Your README.md has been successfully generated!')
