@@ -3,7 +3,7 @@
 <p align="center">
     <img src="./assets/images/logo.png" alt="logo" width="150px" height="150px" />
   <br>
-  <i>README Lab generates a professional README.md
+  <i>Generates a professional README.md
     <br> using Node.js.</i>
   <br>
 </p>
