@@ -13,7 +13,7 @@
 ![Contributors](https://img.shields.io/github/contributors/larigens/readme-lab?style=plastic&color=success)
 ![Forks](https://img.shields.io/github/forks/larigens/readme-lab?style=plastic&color=success)
 ![Stars](https://img.shields.io/github/stars/larigens/readme-lab?style=plastic&color=success)
-![Licence](https://img.shields.io/github/license/larigens/readme-lab?style=plastic&color=success)
+![Licence](https://img.shields.io/static/v1?label=License&message=Apache-2.0&color=success)
 ![Issues](https://img.shields.io/github/issues/larigens/readme-lab?style=plastic&color=success)
 
 ---
@@ -143,4 +143,4 @@ Our Code of Conduct follows the same principles as the [Contributor Covenant](ht
 
 ## License
 
-Please refer to the [LICENSE](https://choosealicense.com/licenses/mit/) in the repo.
+Please refer to the [LICENSE](https://choosealicense.com/licenses/apache-2.0/) in the repo.
