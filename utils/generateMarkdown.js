@@ -24,12 +24,7 @@ function generateMarkdown(answers) {
         readmeDraft = `
 <h1 align="center"> ${name} </h1> <br>\n`
     }
-    else if (style === "Classic" && website === true) {
-        readmeDraft = `
-# ${name}\n
-<p align="center"><a href="${websiteURL}"><strong> Access our app! </strong></a><br></p><br>\n`
-    }
-    else if (style === "Classic" && website === false) {
+    else if (style === "Classic") {
         readmeDraft = `
 # ${name}\n`
     }
@@ -125,7 +120,7 @@ ${description}\n`
             readmeDraft += `
 - [Mock-Up](#mock-up)\n`
         }
-`- [Usage](#usage)\n
+        `- [Usage](#usage)\n
 - [Questions](#questions)\n`
         if (contributionsQues) {
             readmeDraft += `
@@ -135,7 +130,7 @@ ${description}\n`
             readmeDraft += `
 - [Tests](#tests)\n`
         }
-`-[Credits]($credits)\n
+        `-[Credits]($credits)\n
 - [Acknowledgements](#acknowledgements)\n`
         if (authorsQues) {
             readmeDraft += `
@@ -152,6 +147,13 @@ ${description}\n`
         readmeDraft += `
 ## Installation\n
 ${installation}\n`
+    }
+
+    // Website
+    if (style === "Classic" && website === true) {
+        readmeDraft += `
+## Website\n
+<p><a href="${websiteURL}"><strong> Access our app! </strong></a><br></p>\n`
     }
 
     // Mock-Up

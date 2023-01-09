@@ -74,10 +74,10 @@ npm install --save inquirer@^8.0.0
 
 ## Mock-Up
 
-The following gif shows the web application's appearance and functionality:
+The following images shows the two styles that you can create your README file:
 
-![App Screenshot](./assets/images/demo.gif)
-
+![App Screenshot](./assets/images/demo-classic.png)
+![App Screenshot](./assets/images/demo-creative.png)
 ## Usage
 
 Launch the application by entering the command below on your terminal:
@@ -90,19 +90,22 @@ Once the application is launched, a series of questions will appear so that the 
 
 A new README file will then be generated and saved in a different folder called `dist`. The content will vary depending on the user's inputs, but the available items are: **Title of the project, Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions**.
 
-If you need more guidance on how to use README Lab, click here for the tutorial!
+If you need more guidance on how to use README Lab, click [here](https://drive.google.com/file/d/1dspp5iZJw7dOuZ8cVvw_FdWhbW0sSzam/view) for the tutorial or scan the QR Code below:
+
+<img src="./assets/images/qr-code.png" alt="qr-code" width="100px" height="100px" />
 
 **Note: the README will be generated with some hints that you will need to change according to your project. After you finish, erase the notes.**
 
 ## Guide
 
-You can find a template README.md inside the `src` folder where you will find all the items and reasons why you should add them to your file.
+If you're not sure what to add, look inside the `src` folder. There you'll find a README.md file that will tell you everything you need.
 
 ## Questions
 
 For questions and support feel free to contact me via:
 
 <a href="mailto:larigens@gmail.com">📧 Email </a> 
+
 <a href="https://github.com/larigens">🐈‍⬛ GitHub </a>
 
 ## Contributions
