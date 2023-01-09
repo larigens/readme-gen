@@ -9,12 +9,12 @@
 </p>
 <br>
 
-![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-9cf.svg)
-![Contributors](https://img.shields.io/github/contributors/larigens/readme-lab?style=plastic&color=9cf)
-![Forks](https://img.shields.io/github/forks/larigens/readme-lab?style=plastic&color=9cf)
-![Stars](https://img.shields.io/github/stars/larigens/readme-lab?style=plastic&color=9cf)
-![Licence](https://img.shields.io/github/license/larigens/readme-lab?style=plastic&color=9cf)
-![Issues](https://img.shields.io/github/issues/larigens/readme-lab?style=plastic&color=9cf)
+![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-success.svg)
+![Contributors](https://img.shields.io/github/contributors/larigens/readme-lab?style=plastic&color=success)
+![Forks](https://img.shields.io/github/forks/larigens/readme-lab?style=plastic&color=success)
+![Stars](https://img.shields.io/github/stars/larigens/readme-lab?style=plastic&color=success)
+![Licence](https://img.shields.io/github/license/larigens/readme-lab?style=plastic&color=success)
+![Issues](https://img.shields.io/github/issues/larigens/readme-lab?style=plastic&color=success)
 
 ---
 ## Description
@@ -100,7 +100,10 @@ You can find a template README.md inside the `utils` folder where you will find 
 
 ## Questions
 
-For questions and support please <a href="mailto:larigens@gmail.com">email me</a>!
+For questions and support feel free to contact me via:
+
+<a href="mailto:larigens@gmail.com">📧 Email </a> 
+<a href="https://github.com/larigens">🐈‍⬛ GitHub </a>
 
 ## Contributions
 ### Contributing Guidelines
