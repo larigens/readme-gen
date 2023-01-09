@@ -33,6 +33,8 @@ During this process, I learned how crucial the file is to the application and wh
   - [Prerequisites](#prerequisites)
   - [Setting Up](#setting-up)
 - [Mock-Up](#mock-up)
+  - [Classic](#classic)
+  - [Creative](#creative)
 - [Usage](#usage)
 - [Guide](#guide)
 - [Questions](#questions)
@@ -76,7 +78,12 @@ npm install --save inquirer@^8.0.0
 
 The following images shows the two styles that you can create your README file:
 
+### Classic
+
 ![App Screenshot](./assets/images/demo-classic.png)
+
+### Creative
+
 ![App Screenshot](./assets/images/demo-creative.png)
 ## Usage
 
@@ -121,21 +128,13 @@ Our Code of Conduct follows the same principles as the [Contributor Covenant](ht
 ### Acknowledgements
 
 - [W3 Schools](https://www.w3schools.com)
-
 - [MDN](https://developer.mozilla.org/en-US/)
-
 - [Node.js](https://nodejs.org/en/)
-  
 - [NPM](https://www.npmjs.com/)
-  
 - [Inquirer](https://www.npmjs.com/package/inquirer)
-  
 - [Professional README Guide](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
-  
 - [Shields](https://shields.io/)
-  
 - [PaksTech](https://pakstech.com/blog/inquirer-js/)
-  
 - [FreeCodeCamp](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/)
 
 ### Links
