@@ -3,7 +3,7 @@
 <p align="center">
     <img src="./assets/images/logo.png" alt="logo" width="150px" height="150px" />
   <br>
-  <i>Generates a professional README.md
+  <i>README.md generator
     <br> using Node.js.</i>
   <br>
 </p>
