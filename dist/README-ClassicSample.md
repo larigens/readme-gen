@@ -1,14 +1,5 @@
 
-# README Lab
-
-![Licence](https://img.shields.io/static/v1?label=License&message=apache-2.0&color=red)
-![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-red.svg)
-![Contributors](https://img.shields.io/github/contributors/loremipsum/lorem-ipsum?style=plastic&color=red)
-![Forks](https://img.shields.io/github/forks/loremipsum/lorem-ipsum?style=plastic&color=red)
-![Stars](https://img.shields.io/github/stars/loremipsum/lorem-ipsum?style=plastic&color=red)
-![Issues](https://img.shields.io/github/issues/loremipsum/lorem-ipsum?style=plastic&color=red)
-  
----        
+# README Lab       
 
 ## Description
 
