@@ -69,7 +69,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 Open the project in VS Code and make sure you are in the directory of this application before installing `Inquirer`. To install it, type the command below on your terminal:
 
 ```bash
-npm install --save inquirer@^8.0.0
+npm install --save inquirer@^8.2.5
 ```
 
 **Note: Be sure to download this version, because newer versions no longer use the commonjs syntax require('inquirer').**
