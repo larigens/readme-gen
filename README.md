@@ -3,8 +3,8 @@
 <p align="center">
     <img src="./assets/images/logo.png" alt="logo" width="150px" height="150px" />
   <br>
-  <i>README.md generator
-    <br> using Node.js.</i>
+  <i>README generator
+    <br> built using Node.js.</i>
   <br>
 </p>
 <br>
