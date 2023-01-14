@@ -129,7 +129,7 @@ ${description}\n`
         }
         if (contributingQues) {
             readmeDraft += `
-- [Contributing](#Contributing)\n`
+- [Contributing](#contributing)\n`
         }
         if (testsQues) {
             readmeDraft += `
@@ -137,12 +137,12 @@ ${description}\n`
         }
         if (acknowledgements !== "") {
             readmeDraft += `
--[Credits]($credits)\n
-- [Acknowledgements](#acknowledgements)\n`
+- [Credits](#credits)\n
+    - [Acknowledgements](#acknowledgements)\n`
         }
         if (authorsQues) {
             readmeDraft += `
-- [Authors](#authors)\n`
+    - [Authors](#authors)\n`
         }
         if (license !== "None") {
             readmeDraft += `
