@@ -122,6 +122,8 @@ Our Code of Conduct follows the same principles as the [Contributor Covenant](ht
 
 ## Tests
 
+Enter the necessary inputs and check the terminal for errors.
+
 ## Credits
 ### Acknowledgements
 
