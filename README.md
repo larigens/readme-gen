@@ -26,8 +26,8 @@ I've noticed how much time we developers spend creating a quality README.md file
 During this process, I learned how crucial the file is to the application and what other items could be added to make it easier for users to understand and use effectively. Even the most elegantly designed application is useless if no one knows how to use it.
 
 ## Table of Contents
+
 - [Description](#description)
-- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
   - [Cloning the Repository](#cloning-the-repository)
   - [Prerequisites](#prerequisites)
