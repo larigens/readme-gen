@@ -36,11 +36,11 @@ During this process, I learned how crucial the file is to the application and wh
   - [Classic](#classic)
   - [Creative](#creative)
 - [Usage](#usage)
-- [Guide](#guide)
 - [Questions](#questions)
-- [Contributions](#contributions)
+- [Contributing](#contributing)
   - [Contributing Guidelines](#contributing-guidelines)
   - [Code of Conduct](#code-of-conduct)
+- [Tests](#tests)
 - [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
   - [Links](#links)
@@ -103,10 +103,6 @@ If you need more guidance on how to use README Lab, click [here](https://drive.g
 
 **Note: the README will be generated with some hints that you will need to change according to your project. After you finish, erase the notes.**
 
-## Guide
-
-If you're not sure what to add, look inside the `src` folder. There you'll find a README.md file that will tell you everything you need.
-
 ## Questions
 
 For questions and support feel free to contact me via:
@@ -115,7 +111,7 @@ For questions and support feel free to contact me via:
 
 <a href="https://github.com/larigens">🐈‍⬛ GitHub </a>
 
-## Contributions
+## Contributing
 ### Contributing Guidelines
 
 Want to report a bug, contribute some code, request a new feature, or improve the documentation? You can submit an issue and I will gladly welcome you as a contributor, but before submitting an issue, please search the issue tracker, as it may already exist!
@@ -123,6 +119,8 @@ Want to report a bug, contribute some code, request a new feature, or improve th
 ### Code of Conduct
 
 Our Code of Conduct follows the same principles as the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/), version 2.1.
+
+## Tests
 
 ## Credits
 ### Acknowledgements

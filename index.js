@@ -1,7 +1,7 @@
 // Packages needed
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./assets/utils/generateMarkdown');
 
 // Array of questions for user input
 const questions = [
@@ -140,14 +140,14 @@ const questions = [
     {
         type: "confirm",
         message: "Would you like other developers to contribute to your app?",
-        name: "contributionsQues"
+        name: "contributingQues"
     },
     {
         type: "input",
         message: "Please enter guidelines for how to contribute to your app: ",
-        name: "contributions",
+        name: "contributing",
         when(answers) {
-            return answers.contributionsQues === true;
+            return answers.contributingQues === true;
         },
         validate: answers => {
             if (!answers.trim()) {
@@ -244,7 +244,7 @@ const questions = [
         message: "Enter the name of your repository exactly as it is displayed on GitHub: ",
         name: "repository",
         when(answers) {
-            return answers.contributionsQues === true || answers.badgesQues === true || answers.license !== "none";
+            return answers.contributingQues === true || answers.badgesQues === true || answers.license !== "none";
         },
         validate: answers => {
             if (!answers.trim()) {

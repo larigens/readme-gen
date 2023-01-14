@@ -1,5 +1,5 @@
 function generateMarkdown(answers) {
-    var { name, style, logo, description, tableOfContents, installationQues, installation, website, websiteURL, mockup, usage, email, github, contributionsQues, contributions, testsQues, tests, acknowledgements, authorsQues, authors, license, badgesQues, badgesColor, repository } = answers
+    var { name, style, logo, description, tableOfContents, installationQues, installation, website, websiteURL, mockup, usage, email, github, contributingQues, contributing, testsQues, tests, acknowledgements, authorsQues, authors, license, badgesQues, badgesColor, repository } = answers
     // Initial README and will add items according to user input
     let readmeDraft = "";
 
@@ -78,7 +78,7 @@ function generateMarkdown(answers) {
     }
 
     // Contributor Covenant Badge
-    if (contributionsQues) {
+    if (contributingQues) {
         readmeDraft += `
 ![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-${badgesColor}.svg)`
     }
@@ -93,7 +93,7 @@ function generateMarkdown(answers) {
     }
 
     // Description - two different entries because if there are no badges, the description does not need a break line at the beginning.
-    if (description !== null && license !== "None" || contributionsQues === true || badgesQues === true) { // With badges
+    if (description !== null && license !== "None" || contributingQues === true || badgesQues === true) { // With badges
         readmeDraft += `\n  
 ---        
 \n## Description\n
@@ -110,8 +110,7 @@ ${description}\n`
     if (tableOfContents) {
         readmeDraft += `
 ## Table of Contents\n
-- [Description](#description)\n
-- [Table of Contents](#table-of-contents)\n`
+- [Description](#description)\n`
         if (installationQues) {
             readmeDraft += `
 - [Installation](#installation)\n`
@@ -120,18 +119,27 @@ ${description}\n`
             readmeDraft += `
 - [Mock-Up](#mock-up)\n`
         }
-        `- [Usage](#usage)\n
-- [Questions](#questions)\n`
-        if (contributionsQues) {
+        if (usage !== "") {
             readmeDraft += `
-- [Contributions](#contributions)\n`
+- [Usage](#usage)\n`
+        }
+        if (email !== "") {
+            readmeDraft += `
+- [Questions](#questions)\n`
+        }
+        if (contributingQues) {
+            readmeDraft += `
+- [Contributing](#Contributing)\n`
         }
         if (testsQues) {
             readmeDraft += `
 - [Tests](#tests)\n`
         }
-        `-[Credits]($credits)\n
+        if (acknowledgements !== "") {
+            readmeDraft += `
+-[Credits]($credits)\n
 - [Acknowledgements](#acknowledgements)\n`
+        }
         if (authorsQues) {
             readmeDraft += `
 - [Authors](#authors)\n`
@@ -181,11 +189,11 @@ For questions and support feel free to contact me via:\n
 <a href="https://github.com/${github}">🐈‍⬛ GitHub </a>\n`
     }
 
-    // Contributions
-    if (contributionsQues) {
+    // Contributing
+    if (contributingQues) {
         readmeDraft += `
-## Contributions\n
-${contributions}\n`
+## Contributing\n
+${contributing}\n`
     }
 
     // Tests
